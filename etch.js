@@ -1,18 +1,17 @@
+'use strict';
 // Add Event Listeners here:
-
+function changeOnHover() {
+  $('.cell').hover(function() {
+    $(this).addClass('active');
+  });
+}
 
 // When DOM is ready:
 $(() => {
   createAndPlaceRows(8);
-
+  changeOnHover();
   // Bind your event listeners here:
 });
-
-
-
-
-
-
 
 // ===============================
 // Code below is to automate grid creation
