@@ -3,15 +3,14 @@
 let numCells = 8;
 
 function changeOnHover() {
-  $('.cell').hover(function() {
-    $(this).addClass('active');
+  $('.grid').on('mouseenter', '.cell', (event) => {
+    $(event.currentTarget).addClass('active');
   });
 }
 
 function redrawGrid() {
   $('button').click(() => {
     createAndPlaceRows(numCells);
-    changeOnHover();
   });
 }
 
