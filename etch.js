@@ -1,16 +1,26 @@
 'use strict';
 // Add Event Listeners here:
+let numCells = 8;
+
 function changeOnHover() {
   $('.cell').hover(function() {
     $(this).addClass('active');
   });
 }
 
+function redrawGrid() {
+  $('button').click(() => {
+    createAndPlaceRows(numCells);
+    changeOnHover();
+  });
+}
+
 // When DOM is ready:
 $(() => {
-  createAndPlaceRows(8);
-  changeOnHover();
+  createAndPlaceRows(numCells);
   // Bind your event listeners here:
+  changeOnHover();
+  redrawGrid();
 });
 
 // ===============================
